@@ -1,0 +1,124 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 :root\{\
+  /* Gradient based on the pink-to-blue look from the proposal.\
+     Replace --pink and --blue with exact hexes if/when you have brand files. */\
+  --pink: #FF4D9A;    /* proposal-style pink (approx) */\
+  --blue: #3AA7FF;    /* proposal-style blue (approx) */\
+  --grad: linear-gradient(120deg, var(--pink) 0%, var(--blue) 100%);\
+\
+  --bg: #FAFAFC;\
+  --text: #1F2933;\
+  --muted: #6B7280;\
+  --card: #FFFFFF;\
+  --accent: #FFB8D5;\
+\
+  --maxWidth: 1200px;\
+  --radius: 12px;\
+  --shadow: 0 8px 28px rgba(20,20,30,0.06);\
+  --containerPadding: 24px;\
+  --headerHeight: 72px;\
+  --nav-gap: 18px;\
+  --break-sm: 720px;\
+\}\
+\
+/* Reset */\
+*\{box-sizing:border-box\}\
+html,body\{height:100%\}\
+body\{\
+  margin:0; font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;\
+  background:var(--bg); color:var(--text); -webkit-font-smoothing:antialiased;\
+  -moz-osx-font-smoothing:grayscale; line-height:1.5;\
+\}\
+.container\{max-width:var(--maxWidth); margin:0 auto; padding:0 var(--containerPadding);\}\
+\
+/* Header */\
+.header\{\
+  height:var(--headerHeight);\
+  display:flex; align-items:center; justify-content:space-between;\
+  background:transparent; position:sticky; top:0; z-index:60; padding:10px 0;\
+\}\
+.logo\{\
+  display:flex; align-items:center; gap:12px; font-weight:700; font-size:18px;\
+\}\
+.logo .mark\{\
+  width:44px; height:44px; border-radius:10px;\
+  background:var(--grad);\
+  box-shadow:var(--shadow); display:flex; align-items:center; justify-content:center;\
+  color: #fff; font-weight:700;\
+  font-family: Inter, sans-serif;\
+\}\
+.nav\{display:flex; gap:var(--nav-gap); align-items:center;\}\
+.nav a\{color:var(--text); text-decoration:none; font-weight:600; padding:8px 10px; border-radius:8px;\}\
+.nav a:hover\{background:rgba(0,0,0,0.04)\}\
+.cta\{\
+  background:var(--grad); color:#fff; padding:10px 16px; border-radius:10px; text-decoration:none;\
+  font-weight:700; box-shadow: 0 6px 18px rgba(58,167,255,0.12);\
+\}\
+\
+/* Hero */\
+.hero\{\
+  min-height:58vh; display:flex; align-items:center; color:white;\
+  background-image:var(--grad);\
+  position:relative; overflow:hidden; border-bottom-left-radius:32px; border-bottom-right-radius:32px;\
+\}\
+.hero .overlay\{\
+  position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.18), rgba(0,0,0,0.12));\
+\}\
+.hero .container\{position:relative; z-index:5; padding-top:44px; padding-bottom:44px;\}\
+.hero .grid\{display:grid; grid-template-columns:1fr 420px; gap:28px; align-items:center;\}\
+.hero h1\{margin:0 0 12px; font-size:34px; line-height:1.06; font-weight:800; letter-spacing:-0.02em;\}\
+.hero p\{margin:0 0 18px; color:rgba(255,255,255,0.95); font-weight:500;\}\
+.hero .buttons\{display:flex; gap:12px;\}\
+.btn\{display:inline-block; padding:12px 16px; border-radius:10px; font-weight:700; text-decoration:none;\}\
+.btn-light\{background:rgba(255,255,255,0.12); color:#fff; border:1px solid rgba(255,255,255,0.12);\}\
+.btn-solid\{background:#fff; color:var(--text);\}\
+\
+/* Card / services */\
+.cards\{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:22px;\}\
+.card\{background:var(--card); padding:20px; border-radius:14px; box-shadow:var(--shadow); color:var(--text);\}\
+.card h3\{margin:0 0 8px; font-size:18px;\}\
+.card p\{margin:0; color:var(--muted); font-size:14px;\}\
+\
+/* Sections */\
+.section\{padding:54px 0;\}\
+.section h2\{margin:0 0 18px; font-size:22px;\}\
+\
+/* About / team */\
+.team\{display:flex; gap:18px; align-items:center;\}\
+.team .photo\{width:120px; height:120px; border-radius:14px; overflow:hidden; flex-shrink:0; background:#eee; display:flex; align-items:center; justify-content:center;\}\
+.team .bio\{flex:1;\}\
+\
+/* Services list */\
+.services-grid\{display:grid; grid-template-columns:repeat(2,1fr); gap:18px;\}\
+.service-item\{background:var(--card); padding:18px; border-radius:12px; box-shadow:var(--shadow);\}\
+\
+/* Contact */\
+.contact-grid\{display:grid; grid-template-columns:1fr 420px; gap:28px; align-items:start;\}\
+.form input, .form textarea, .form select\{width:100%; padding:12px; border-radius:8px; border:1px solid #E6E7EA; margin-bottom:10px; font-size:15px;\}\
+.form textarea\{min-height:140px; resize:vertical;\}\
+.form .submit\{background:var(--grad); color:white; border:none; padding:12px 16px; border-radius:10px; font-weight:700; cursor:pointer;\}\
+\
+/* Footer */\
+.footer\{background:#FFF; padding:24px 0; border-top:1px solid #EEE; margin-top:40px;\}\
+.footer small\{color:var(--muted)\}\
+\
+/* Responsive */\
+@media (max-width: 1000px)\{\
+  .hero .grid\{grid-template-columns:1fr;\}\
+  .cards\{grid-template-columns:repeat(2,1fr);\}\
+  .team\{flex-direction:column; align-items:flex-start;\}\
+  .contact-grid\{grid-template-columns:1fr;\}\
+\}\
+@media (max-width: 720px)\{\
+  .nav\{display:none\}\
+  .hero h1\{font-size:28px\}\
+  .cards\{grid-template-columns:1fr;\}\
+  .services-grid\{grid-template-columns:1fr;\}\
+\}\
+}
